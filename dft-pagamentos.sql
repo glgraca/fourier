@@ -1,7 +1,7 @@
 with 
 bases as (
   select * from (
-    select k.k, n.n, cos(2*3.141592653589793238462643383279502884197169399375/24*k.k*n.n) a, -sin(2*3.141592653589793238462643383279502884197169399375/24*k.k*n.n) b
+    select k.k, n.n, cos(2*3.141592653589793238462643383279502884197169399375/24*k.k*n.n) a, sin(2*3.141592653589793238462643383279502884197169399375/24*k.k*n.n) b
     from (select rownum-1 k from all_tables where rownum<13) k,
          (select rownum-1 n from all_tables where rownum<25) n
   )),
